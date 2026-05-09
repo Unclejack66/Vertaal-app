@@ -6,9 +6,9 @@ import requests
 st.set_page_config(page_title="Paman & Neefje", page_icon="❤️")
 st.title("🇳🇱 Vertaler 🇮🇩")
 
-# API Keys (Deze kun je veilig invullen in de Streamlit 'Secrets' instellingen)
-OPENAI_API_KEY = st.sidebar.text_input("OpenAI API Key", type="password")
-ELEVENLABS_API_KEY = st.sidebar.text_input("ElevenLabs API Key", type="password")
+# Zoekt de sleutels in de Secrets instellingen die je net hebt ingevuld
+OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
+ELEVENLABS_API_KEY = st.secrets["ELEVENLABS_API_KEY"]
 
 client = OpenAI(api_key=OPENAI_API_KEY)
 
